@@ -842,6 +842,7 @@ void map()
     else if(user1 != 1 || user1 != 2 || user1 != 3 || user1 != 4)
     {   x=1;
         y=1;
+     	user1=1;
     }
     system("cls");
     escolha_player(2);
@@ -849,8 +850,23 @@ void map()
 /** Mesma coisa do algoritmo acima, porem a posicao escolhida tem de ser diferente da escolhida pelo jogador 1
  *  Se o jogador 1 digitar algum valor invalido, ele comecara da linha 1 e coluna 1
  *  Logo, o Jogador II nao podera comecar nessa posicao                             */
-	if(user2 == 1 || user2 == 2 || user2 == 3 || user2 == 4 || user2 != user1)
-    {   if(user2==1)
+if(user2==user1){
+			if(user1==2)
+			{
+			w=1;
+			z=1;
+			user2=1;
+			}
+			else
+			{
+			w=1;
+			z=10;
+			user2=2;
+			}
+					}	
+	else if(user2 == 1 || user2 == 2 || user2 == 3 || user2 == 4)
+    {  
+		if(user2==1)
         {   w=1;
             z=1;
         }
@@ -866,14 +882,12 @@ void map()
         {   w=10;
             z=10;
         }
-        if(user2 == user1)
-        {   w=1;
-            z=10;
-        }
+
     }
-    else    if(user2 != 1 || user2 != 2 || user2 != 3 || user2 != 4 || user2==user1)
+	else
     {   w=1;
         z=10;
+			user2=2;
     }
 	init_x=x;   init_y=y;   init_w = w; init_z=z;
 /*  O init_x e etc ja ira por os jogadores em suas posicoes iniciais.
